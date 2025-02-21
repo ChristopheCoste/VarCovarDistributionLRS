@@ -4,7 +4,7 @@ clear all; clc;close all;
 epsilon1=0.000000000001 %proportion of individuals allowed to survive past the maximum age
 s=2 % number of states
 S=[.3 0; .2 .7] % expectation of survival
-F=[0.5 0.5; 0 0.5] %expectation of reproduction
+%F=[0.5 0.5; 0 0.5] %expectation of reproduction
 
 %numeric matrix storing (in F(i,j) the probability distribution for an individual in state j to produce i-1 offspring in a given time-step
 Fcal=[.5 0; .5 1]
@@ -22,6 +22,7 @@ while smax>epsilon1
 omega=omega+1;
 smax=max(ones(1,s)*(S^omega));
 end
+
 omega 
 
 %% generation of probability distribution of LRS by iteration
@@ -53,4 +54,4 @@ nexttile;
 bar(0:kmax,Rcal(1:kmax+1,2),'r')
 xlabel('lifetime reproductive success','Interpreter','latex')
 ylabel('probability','Interpreter','latex')
-legend('total LRS for a type \emph{small}','Interpreter','latex')
+legend('total LRS for a type \emph{large}','Interpreter','latex')
