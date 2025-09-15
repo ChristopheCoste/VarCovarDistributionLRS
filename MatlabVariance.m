@@ -1,5 +1,3 @@
-clear all; clc;close all;
-
 % Provides the expectation and variance-covariance of LRS
 % Can be used for any strutured population projeciton model
 % We use the model of the illustration.
@@ -10,13 +8,13 @@ clear all; clc;close all;
 s=2 
 
 %expectation of survival
-S=[.3 0; .2 .7] % expectation of survival
+S=[.3 0; .2 .7] % expectation of survival % eq (a)
 
 %expectation of reproduction
-F=[0.5 0.5; 0 0.5] 
+F=[0.5 0.5; 0 0.5]   %eq (e)
 
 %variance of reproduction
-VF=[.25 .25; 0 -.25 ; 0 -.25 ;0 0.25]
+VF=[.25 .25; 0 -.25 ; 0 -.25 ;0 0.25] %eq (e)
 
 
 
@@ -32,16 +30,16 @@ ei=zeros(s,1);ei(i)=1;
 J=J+kron(ei,ei)*ei';
 end
 
-VS=J*S-kron(S,S)*J    %(eq.4)
+VS=J*S-kron(S,S)*J    %eqs 4 and  (c)
 
 %% projection of abundance vector over time
 n0=[1;1]
 Vn1=(VS+VF)*n0
-reshape(Vn1,s,s)
+reshape(Vn1,s,s) % unumbered equation (following equation 5c)
 
 
 %% expectation of LRS
-R=F*(eye(s)-S)^(-1) %eq 8, next generation matrix
+R=F*(eye(s)-S)^(-1) %eqs 8 and (i), next generation matrix
 
 rT=ones(1,s)*F*(eye(s)-S)^(-1) % expectation of Total LRS
 
@@ -50,7 +48,7 @@ rT=ones(1,s)*F*(eye(s)-S)^(-1) % expectation of Total LRS
 %% Variance-Covariance of LRS
 N=(eye(s)-S)^(-1); % fundamental matrix: expected time-spent in stages
 
-VR= (VF+kron(R,R)*VS)*N %eq9
+VR= (VF+kron(R,R)*VS)*N %eqs 10 and (j)
 
 reshape(VR(:,1),s,s) %var-covariance of LRS for a type 2 (born medium) individual
 
@@ -58,4 +56,3 @@ reshape(VR(:,1),s,s) %var-covariance of LRS for a type 2 (born medium) individua
 %% variance of total LRS
 
 VrT=(kron(rT,rT)*VS+ones(1,s^2)*VF)*(eye(s)-S)^(-1) %eq 11
-
