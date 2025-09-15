@@ -12,6 +12,6 @@ It contains code in both R and Matlab.
 - This code can be applied to obtain the **distribution of total LRS for any structured population model**, and is there applied to the illustration, yielding Figs 1c and 1d.
 
 
-**(IV)** the specific computation of the distribution of LRS for Tsuga (extension II) can be found in [Tsuga_Distribution_Numeric.m](https://github.com/ChristopheCoste/DistributionLRS/blob/main/Tsuga_Distribution_Numeric.m) , yielding figure 2.
+**(IV)** the specific computation of the distribution of LRS for Tsuga (extension II) can be found in [Tsuga_Distribution_Numeric.m](https://github.com/ChristopheCoste/DistributionLRS/blob/main/Tsuga_Distribution_Numeric.m) , yielding figure 2 of the main text and figure 3 of SM I.
 
 **(V)** the computation of the variance-covaraince of LRS when survival and reproduction covary, as per the illustration of SM2, can be found in  [Moments_covaryingFS.m](https://github.com/ChristopheCoste/DistributionLRS/blob/main/Moments_covaryingFS.m)
