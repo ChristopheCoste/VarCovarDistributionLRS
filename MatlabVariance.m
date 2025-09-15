@@ -55,4 +55,5 @@ reshape(VR(:,1),s,s) %var-covariance of LRS for a type 2 (born medium) individua
 
 %% variance of total LRS
 
-VrT=(kron(rT,rT)*VS+ones(1,s^2)*VF)*(eye(s)-S)^(-1) %eq 11
+VrT=(kron(rT,rT)*VS+ones(1,s^2)*VF)*(eye(s)-S)^(-1) %eq 12
+
