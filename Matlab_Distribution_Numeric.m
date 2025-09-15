@@ -1,4 +1,3 @@
-clear all; clc;close all;
 %% inputs
 %tolerance 
 epsilon1=0.000000000001 %proportion of individuals allowed to survive past the maximum age
@@ -48,9 +47,11 @@ bar(0:kmax,Rcal(1:kmax+1,1),'b')
 xlabel('lifetime reproductive success','Interpreter','latex')
 ylabel('probability','Interpreter','latex')
 legend('total LRS for a type \emph{small}','Interpreter','latex')
+ylim([0 0.4])
 
 nexttile;
 bar(0:kmax,Rcal(1:kmax+1,2),'r')
 xlabel('lifetime reproductive success','Interpreter','latex')
 ylabel('probability','Interpreter','latex')
 legend('total LRS for a type \emph{small}','Interpreter','latex')
+ylim([0 0.4])
